@@ -20,29 +20,34 @@ export default function Regform() {
     return (
         <View>
             <Text style={styles.headd}>Contact Form</Text>
+
+            <Text style={styles.textt}>Full Name:</Text>
             <TextInput style={styles.textinput}
                 placeholder="Enter Your Name"
                 onChangeText={value => setUserName(value) }
                 value={userName}
             />
+
+            <Text style={styles.textt}>Email:</Text>
             <TextInput style={styles.textinput}
                 placeholder="Enter Your Email"
                 onChangeText={value => setUserEmail(value) }
                 value={userEmail}
             />
+
+            <Text style={styles.textt}>Phone Number:</Text>    
             <TextInput style={styles.textinput}
                 placeholder="Enter Your Number"
                 onChangeText={value => setUserNumber(value) }
                 value={userNumber}
             />
 
-            <Button style={styles.submit}
-                onPress={buttonClicked}
-                title="Send">
-                
-            </Button>
-            <TouchableOpacity
-                styles={styles.opacitybutton}
+            <TouchableOpacity style={styles.submit}
+                onPress={buttonClicked}>
+                { <Text style={styles.textView}>Send</Text> }
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.opacitybutton}
                 onPress={textClicked}>
                 { <Text style={styles.textView}>Clear</Text> }
             </TouchableOpacity>
@@ -60,8 +65,15 @@ const styles = StyleSheet.create({
         padding:40,
         
     },
+    textt: {
+        alignSelf: "stretch",
+        paddingLeft: 15,
+        marginBottom: 5,
+        marginTop: 5
+    },
     textinput: {
         alignSelf: "stretch",
+        fontSize: 16,
         height: 40,
         marginBottom: 10,
         paddingLeft: 15,
@@ -71,29 +83,27 @@ const styles = StyleSheet.create({
         borderRadius: 30,
     },
     submit: {
-        marginRight: 40,
-        marginLeft: 40,
-        marginTop: 10,
-        paddingTop: 20,
-        paddingBottom: 20,
-        backgroundColor: '#68a0cf',
-        borderRadius: 10,
-        borderWidth: 1,
-        borderColor: '#fff',
+        elevation: 8,
+        backgroundColor: "#00ff97",
+        borderRadius: 30,
+        paddingVertical: 10,
+        paddingHorizontal: 12,
+        marginTop: 10
       },
     opacitybutton: {
-        alignSelf: "stretch",
-        justifyContent: 'center',
-        padding: 15,
-        backgroundColor: "#59cbbd",
-        marginTop: 10,
+        elevation: 8,
+        backgroundColor: "#effac3",
+        borderRadius: 30,
+        paddingVertical: 10,
+        paddingHorizontal: 12,
+        marginTop: 10
     },
-        textView:{
-        marginLeft:107,
-        marginTop:10,
-        marginBottom:10,
+    textView:{
+        fontSize: 18,
         color: "gray",
-        fontSize:20
+        fontWeight: "bold",
+        alignSelf: "center",
+        textTransform: "uppercase"
         
     }
     
